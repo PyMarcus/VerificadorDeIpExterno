@@ -13,9 +13,7 @@ def formato(dados):
     print(f"REGIÃO: {dados['region']}")
 
 
-
-
-
-api = urlopen('https://ipinfo.io/json')
-dados = json.load(api)
-formato(dados)
+if __name__ == '__main__':
+    api = urlopen('https://ipinfo.io/json')
+    dados = json.load(api)
+    formato(dados)
