@@ -5,6 +5,9 @@ from urllib.request import urlopen
 
 
 def formato(dados):
+    api = urlopen('https://ipinfo.io/json')  # requisição
+    dados = json.load(api) # carrega o dicionário json
+    
     print("Informações sobre o ip")
     print(f"IP: {dados['ip']}")
     print(f"ORG: {dados['org']}")
@@ -14,6 +17,4 @@ def formato(dados):
 
 
 if __name__ == '__main__':
-    api = urlopen('https://ipinfo.io/json')
-    dados = json.load(api)
     formato(dados)
